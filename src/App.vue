@@ -3,9 +3,9 @@ import {ref} from "vue" //* refは関数 使うときはデータをオブジェ
 const title = "Vue.js Course"
 let price = ref(9.99) //* refに理アクティビティにしたいものを渡す
 //* refが返す複雑なオブジェクトはrefオブジェクトっていう名前
-console.log(price)
+console.log(price.value)  //* .valueっていうプロパティがある
 const increment = () =>{
-  // price += 1
+  price.value += 1
 console.log(price)
 }
 </script>
