@@ -1,10 +1,9 @@
 <script setup>
-const userName = "Yoshipi"
-console.log(userName)
+const title = "Vue.js Course"
 </script>
 
 <template>
-  <h1>Titleだよー</h1>
+  <h1>{{title}}</h1>
 </template>
 
 <style>
