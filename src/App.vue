@@ -8,6 +8,7 @@ const increment = () => {
   price.value += 1
   instructor.age += 1
   instructor.bio = "Hi"
+  instructor.email = "x@example.com" //* ここも.valueつけない
   console.log(instructor)
   // console.log(price)
 }
@@ -24,12 +25,12 @@ const instructor = reactive({
   age: 25,
   sns: {
     twitter: "@__yoshipi_",  //* ここにもreactive関数適用
-    youtube: "@yoshipi",
-    a:{
-
-    }
-  }
+    youtube: "@yoshipi"
+  },
+  email: ref("yoshipi@example.com") //* ref定義
 })
+console.log(instructor.email) //* .valueは付けない
+
 instructor.bio = "hello" //* 普通に追加できちゃう
 console.log(instructor.age) //* これで呼べちゃう
 </script>
@@ -42,6 +43,7 @@ console.log(instructor.age) //* これで呼べちゃう
   <h3>Stundents: {{ info.students }}</h3>
   <h3>instructor: {{ instructor.age }}</h3>
   <h3>instructor SNS: {{ instructor.sns.twitter }}</h3>
+  <h3>instructor email: {{ instructor.email }}</h3>
 
   <button @click="increment">button</button>
   <!-- @イベント名="関数名"でイベント時に実行される -->
