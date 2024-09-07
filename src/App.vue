@@ -7,6 +7,8 @@ let price = ref(9.99) //* refに理アクティビティにしたいものを渡
 const increment = () => {
   price.value += 1
   instructor.age += 1
+  instructor.bio = "Hi"
+  console.log(instructor)
   // console.log(price)
 }
 
@@ -19,8 +21,16 @@ console.log(info.value.students)
 const instructor = reactive({
   //* オブジェクトがそのまま使えるように見えるようになる
   name: "Yoshipi",
-  age: 25
+  age: 25,
+  sns: {
+    twitter: "@__yoshipi_",  //* ここにもreactive関数適用
+    youtube: "@yoshipi",
+    a:{
+
+    }
+  }
 })
+instructor.bio = "hello" //* 普通に追加できちゃう
 console.log(instructor.age) //* これで呼べちゃう
 </script>
 
@@ -31,6 +41,8 @@ console.log(instructor.age) //* これで呼べちゃう
   <!--普通にjsの式を入れられて結果が表示される ejsとかと一緒 -->
   <h3>Stundents: {{ info.students }}</h3>
   <h3>instructor: {{ instructor.age }}</h3>
+  <h3>instructor SNS: {{ instructor.sns.twitter }}</h3>
+
   <button @click="increment">button</button>
   <!-- @イベント名="関数名"でイベント時に実行される -->
 </template>
