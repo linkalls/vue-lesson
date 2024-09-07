@@ -2,7 +2,8 @@
 const title = "Vue.js Course"
 let price = 9.99
 const increment = () =>{
-console.log("click")
+  price += 1
+console.log(price)
 }
 </script>
 
