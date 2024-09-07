@@ -1,8 +1,10 @@
 <script setup>
+import {ref} from "vue" //* refは関数 使うときはデータをオブジェクトにする必要がある
 const title = "Vue.js Course"
-let price = 9.99
+let price = ref(9.99)
+console.log(price)
 const increment = () =>{
-  price += 1
+  // price += 1
 console.log(price)
 }
 </script>
